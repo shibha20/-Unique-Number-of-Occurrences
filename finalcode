@@ -1,0 +1,15 @@
+class Solution(object):
+    def uniqueOccurrences(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+
+        count_map = {}
+        for i in arr:
+            if i in count_map:
+                count_map[i] += 1
+            else:
+                count_map[i] = 1
+
+        return (len(count_map.values()) ==  len(set(count_map.values())))
